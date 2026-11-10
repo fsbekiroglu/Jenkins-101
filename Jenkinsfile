@@ -10,6 +10,14 @@ triggers {
 }
 
     stages {
+        stage('Starter') {
+            steps {
+                echo "Agent will start with the following step .."
+                sh '''
+                echo "doing starter stuff.."
+                '''
+            }
+        }
         stage('Build') {
             steps {
                 echo "Building.."
