@@ -21,9 +21,11 @@ triggers {
         stage('Build') {
             steps {
                 echo "Building.."
-                sh '''
                 cd myapp
-                sh "pip install -r requirements.txt"                '''
+                sh '''
+                python3 -m venv .venv
+                .venv/bin/pip install -r requirements.txt
+                .venv/bin/pip list               '''
             }
         }
         stage('Test') {
