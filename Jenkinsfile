@@ -35,7 +35,8 @@ triggers {
                 echo "Testing.."
                 sh '''
                 cd myapp
-                .venv/bin/pip index versions fire
+                .venv/bin/python hello.py
+                .venv/bin/python hello.py --name Jenkins
                 '''
             }
         }
