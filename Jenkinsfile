@@ -23,7 +23,7 @@ triggers {
                 echo "Building.."
                 sh '''
                 cd myapp
-                pip install -r requirememnts.txt
+                pip install -r requirements.txt
                 '''
             }
         }
