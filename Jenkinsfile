@@ -35,7 +35,7 @@ triggers {
                 echo "Testing.."
                 sh '''
                 cd myapp
-                python3 hello.py
+                .venv/bin/python3 hello.py
                 '''
             }
         }
