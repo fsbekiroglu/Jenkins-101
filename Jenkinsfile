@@ -23,8 +23,7 @@ triggers {
                 echo "Building.."
                 sh '''
                 cd myapp
-                pip install -r requirements.txt
-                '''
+                sh "pip install -r requirements.txt"                '''
             }
         }
         stage('Test') {
