@@ -52,8 +52,8 @@ triggers {
         stage('Deploy') {
             steps {
                 sh '''
-                docker image tag myapp:v1 172.17.0.2:5000/myapp:v1
-                docker image push 172.17.0.2:5000/myapp:v1
+                curl -v http://172.17.0.2:5000/v2/
+                curl -v http://localhost:5001/v2/
                 '''
             }
         }
