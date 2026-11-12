@@ -39,7 +39,7 @@ triggers {
                 .venv/bin/python hello.py --name Jenkins
                 '''
             }
-            Step {
+            steps {
                 sh '''
                 whoami 
 
