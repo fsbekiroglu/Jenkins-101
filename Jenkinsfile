@@ -49,11 +49,11 @@ triggers {
                 ''' 
             } 
         }
-        stage('Test Container') {
+        stage('Deploy') {
             steps {
                 sh '''
-                curl -i http://172.17.0.2:5000/v2/
-                docker info                 
+                docker image push http://172.17.0.2:5000/myapp:v1
+                curl -i http://172.17.0.2:5000/v2/_catalog       
                 '''
             }
         }
