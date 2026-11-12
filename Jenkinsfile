@@ -52,8 +52,14 @@ triggers {
         stage('Deploy') {
             steps {
                 sh '''
-                docker image push http://172.17.0.2:5000/myapp:v1
-                curl -i http://172.17.0.2:5000/v2/   
+                docker image push http://172.17.0.2:5000/myapp:v1 
+                '''
+            }
+        stage('last check') {
+            steps {
+                sh '''
+                docker curl -i http://172.17.0.2:5000/v2/_catalog
+                docker curl -i http://172.17.0.2:5000/v2/
                 '''
             }
         }
