@@ -52,7 +52,9 @@ triggers {
         stage('Deploy') {
             steps {
                 sh '''
-                docker push 172.17.0.2:5000/myapp:v1
+                docker context show
+                docker version
+                echo $DOCKER_HOST
                 '''
             }
         }
