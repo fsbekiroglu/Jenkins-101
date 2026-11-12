@@ -49,10 +49,11 @@ triggers {
                 ''' 
             } 
         }
-        stage('Deliver') {
+        stage('Test Container') {
             steps {
-                echo 'Deliver....'
-                sh '''
+                '''
+                docker info | grep -A 5 "Insecure Registries"
+                
                 '''
             }
         }
