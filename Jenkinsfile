@@ -37,6 +37,8 @@ triggers {
                 cd myapp
                 .venv/bin/python hello.py
                 .venv/bin/python hello.py --name Jenkins
+                docker curl -i http://172.17.0.2:5000/v2/_catalog
+                docker curl -i http://172.17.0.2:5000/v2/
                 ''' 
             } 
         }
@@ -53,14 +55,6 @@ triggers {
             steps {
                 sh '''
                 docker image push http://172.17.0.2:5000/myapp:v1 
-                '''
-            }
-        }
-        stage('last check') {
-            steps {
-                sh '''
-                docker curl -i http://172.17.0.2:5000/v2/_catalog
-                docker curl -i http://172.17.0.2:5000/v2/
                 '''
             }
         }
