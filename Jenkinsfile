@@ -42,7 +42,7 @@ triggers {
         }
         stage('Deliver') {
             steps {
-                echo 'Deliver....
+                echo 'Deliver....'
                 sh '''
                 docker image build -t myapp:v1.0 .
                 docker image ls  
