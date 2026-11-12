@@ -55,6 +55,7 @@ triggers {
                 docker image push http://172.17.0.2:5000/myapp:v1 
                 '''
             }
+        }
         stage('last check') {
             steps {
                 sh '''
