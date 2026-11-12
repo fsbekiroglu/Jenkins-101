@@ -53,7 +53,7 @@ triggers {
             steps {
                 sh '''
                 curl -v http://172.17.0.2:5000/v2/
-                curl -v http://localhost:5001/v2/
+                docker info 
                 '''
             }
         }
