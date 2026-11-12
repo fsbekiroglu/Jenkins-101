@@ -52,7 +52,7 @@ triggers {
         stage('Deploy') {
             steps {
                 sh '''
-                docker image inspect 172.17.0.2:5000/myapp:v1
+                curl -v http://host.docker.internal:5001/v2
                 '''
             }
         }
