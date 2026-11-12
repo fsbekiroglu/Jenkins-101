@@ -39,6 +39,17 @@ triggers {
                 .venv/bin/python hello.py --name Jenkins
                 '''
             }
+            Step {
+                sh '''
+                whoami 
+
+                id 
+
+                ls -l /var/run/docker.sock 
+
+                dokcer --version
+                '''
+            }
         }
         stage('Deliver') {
             steps {
