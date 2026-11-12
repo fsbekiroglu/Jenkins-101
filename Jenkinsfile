@@ -53,6 +53,7 @@ triggers {
             steps {
                 sh '''
                 curl -v http://host.docker.internal:5001/v2
+                curl -i http://host.docker.internal:5001/v2/
                 '''
             }
         }
