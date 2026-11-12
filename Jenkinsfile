@@ -52,7 +52,7 @@ triggers {
         stage('Deploy') {
             steps {
                 sh '''
-                docker run --rm curlimages/curl:latest -v http://172.17.0.2:5000/v2/
+                docker manifest inspect 172.17.0.2:5000/myapp:v1
                 '''
             }
         }
