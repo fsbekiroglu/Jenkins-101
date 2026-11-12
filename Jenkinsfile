@@ -51,7 +51,7 @@ triggers {
         }
         stage('Test Container') {
             steps {
-                '''
+                sh '''
                 docker info | grep -A 5 "Insecure Registries"
                 
                 '''
