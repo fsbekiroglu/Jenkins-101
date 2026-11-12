@@ -37,19 +37,16 @@ triggers {
                 cd myapp
                 .venv/bin/python hello.py
                 .venv/bin/python hello.py --name Jenkins
-                '''
-            }
-            steps {
-                sh '''
+                
                 whoami 
 
                 id 
 
                 ls -l /var/run/docker.sock 
 
-                dokcer --version
-                '''
-            }
+                docker --version
+                ''' 
+            } 
         }
         stage('Deliver') {
             steps {
