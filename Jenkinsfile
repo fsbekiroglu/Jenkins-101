@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         node {
-            label 'docker-agent'
+            label 'agent-new'
             }
       }
 
@@ -44,9 +44,7 @@ triggers {
             steps {
                 echo 'Deliver....'
                 sh '''
-                docker image build -t myapp:v1.0 .
-                docker image ls  
-                
+                docker ps -a 
                 '''
             }
         }
