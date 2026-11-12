@@ -52,8 +52,8 @@ triggers {
         stage('Test Container') {
             steps {
                 sh '''
-                 curl -i http://172.17.0.2:5000/v2/
-                
+                curl -i http://172.17.0.2:5000/v2/
+                docker info                 
                 '''
             }
         }
