@@ -57,10 +57,11 @@ triggers {
                 '''
             }
         }
-        stage ('Last Stage') {
+        stage ('Last Check') {
             steps {
                 echo "Last Stage.."
                 sh '''
+                curl -v http://host.docker.internal:5001/v2/_catalog
                 '''
             }
         }
