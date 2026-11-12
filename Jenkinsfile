@@ -39,12 +39,8 @@ triggers {
                 .venv/bin/python hello.py --name Jenkins
                 
                 whoami 
-
-                id 
-
-                ls -l /var/run/docker.sock 
-
-                docker --version
+                id jenkins
+                stat -c  "%a %g %u %n" /var/run/docker.sock
                 ''' 
             } 
         }
