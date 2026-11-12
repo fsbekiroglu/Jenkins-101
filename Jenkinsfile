@@ -53,7 +53,7 @@ triggers {
             steps {
                 sh '''
                 docker image push http://172.17.0.2:5000/myapp:v1
-                curl -i http://172.17.0.2:5000/v2/_catalog       
+                curl -i http://172.17.0.2:5000/v2/   
                 '''
             }
         }
