@@ -52,7 +52,7 @@ triggers {
         stage('Deploy') {
             steps {
                 sh '''
-                docker manifest inspect 172.17.0.2:5000/myapp:v1
+                docker image inspect 172.17.0.2:5000/myapp:v1
                 '''
             }
         }
