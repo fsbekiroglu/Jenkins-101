@@ -52,7 +52,7 @@ triggers {
         stage('Deploy') {
             steps {
                 sh '''
-                docker image push http://172.17.0.2:5000/myapp:v1 
+                docker image push 172.17.0.2:5000/myapp:v1 
                 '''
             }
         }
