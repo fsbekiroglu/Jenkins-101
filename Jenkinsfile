@@ -37,10 +37,15 @@ triggers {
                 cd myapp
                 .venv/bin/python hello.py
                 .venv/bin/python hello.py --name Jenkins
-                
-                whoami 
-                id jenkins
-                stat -c  "%a %g %u %n" /var/run/docker.sock
+                ''' 
+            } 
+        }
+        stage('Image Build') {
+            steps {
+                echo "Testing.."
+                sh '''
+                docker build -t myapp:v1 .
+                docker images | grep myapp
                 ''' 
             } 
         }
@@ -48,9 +53,9 @@ triggers {
             steps {
                 echo 'Deliver....'
                 sh '''
-                docker ps -a 
                 '''
             }
         }
     }
 }
+
