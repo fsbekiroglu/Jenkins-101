@@ -52,8 +52,8 @@ triggers {
         stage('Deploy') {
             steps {
                 sh '''
-                curl -v http://host.docker.internal:5001/v2
-                curl -i http://host.docker.internal:5001/v2/
+                docker image tag myapp:v1 host.docker.internal:5001/myapp:v1
+                docker image push host.docker.internal:5001/myapp:v1
                 '''
             }
         }
