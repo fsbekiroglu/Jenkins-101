@@ -52,7 +52,7 @@ triggers {
         stage('Test Container') {
             steps {
                 sh '''
-                docker info | grep -A 5 "Insecure Registries"
+                 curl -i http://172.17.0.2:5000/v2/
                 
                 '''
             }
