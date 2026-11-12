@@ -52,9 +52,7 @@ triggers {
         stage('Deploy') {
             steps {
                 sh '''
-                docker context show
-                docker version
-                echo $DOCKER_HOST
+                docker run --rm curlimages/curl:latest -v http://172.17.0.2:5000/v2/
                 '''
             }
         }
