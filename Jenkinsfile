@@ -52,8 +52,7 @@ triggers {
         stage('Deploy') {
             steps {
                 sh '''
-                curl -v http://172.17.0.2:5000/v2/
-                docker info 
+                docker push 172.17.0.2:5000/myapp:v1
                 '''
             }
         }
