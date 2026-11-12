@@ -52,8 +52,7 @@ triggers {
         stage('Deploy') {
             steps {
                 sh '''
-                docker image tag myapp:v1 172.17.0.2:5000/myapp:v1 
-                docker image push 172.17.0.2:5000/myapp:v1
+                curl -v http://172.17.0.2:5000/v2/
                 '''
             }
         }
@@ -61,8 +60,6 @@ triggers {
             steps {
                 echo "Last Stage.."
                 sh '''
-                curl -i http://172.17.0.2:5000/v2/_catalog
-                curl -i http://172.17.0.2:5000/v2/
                 '''
             }
         }
